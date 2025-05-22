@@ -1,7 +1,9 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../repositories/data_repository.dart';
 import '../models/country.dart';
+import '../models/attraction.dart';
 import '../blocs/favourites_bloc.dart';
 import '../widgets/custom_drawer.dart';
 import '../widgets/country_tile.dart';
@@ -9,8 +11,16 @@ import '../widgets/country_tile.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  Future<List<Attraction>> _getRandomAttractions() async {
+    final attractions = await DataRepository().loadAttractions();
+    attractions.shuffle(Random());
+    return attractions.take(5).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
       drawer: const CustomDrawer(),
       appBar: AppBar(
@@ -43,21 +53,14 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Hero(
-                  tag: 'home-hero',
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(24),
-                      bottomRight: Radius.circular(24),
-                    ),
-                    child: Image.asset(
-                      "assets/images/hero_world.png",
-                      height: 180,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                // No extra padding, no Stack, no SafeArea!
+                Image.asset(
+                  "assets/images/hero_world.png",
+                  width: double.infinity,
+                  height: 210,
+                  fit: BoxFit.cover,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 12),
 
                 // Favourites Section
                 BlocBuilder<FavouritesBloc, FavouritesState>(
@@ -122,9 +125,7 @@ class HomeScreen extends StatelessWidget {
                                                 child: Text(
                                                   country.name,
                                                   style:
-                                                      Theme.of(
-                                                        context,
-                                                      ).textTheme.bodySmall,
+                                                      theme.textTheme.bodySmall,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.center,
@@ -205,9 +206,7 @@ class HomeScreen extends StatelessWidget {
                                               child: Text(
                                                 city.name,
                                                 style:
-                                                    Theme.of(
-                                                      context,
-                                                    ).textTheme.bodySmall,
+                                                    theme.textTheme.bodySmall,
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.center,
                                               ),
@@ -284,9 +283,7 @@ class HomeScreen extends StatelessWidget {
                                               child: Text(
                                                 a.name,
                                                 style:
-                                                    Theme.of(
-                                                      context,
-                                                    ).textTheme.bodySmall,
+                                                    theme.textTheme.bodySmall,
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.center,
                                               ),
@@ -353,7 +350,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Explore Countries",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: theme.textTheme.headlineMedium,
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -381,7 +378,94 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 28),
+                // ----------------- Popular Attractions Section -----------------
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    "Popular Places",
+                    style: theme.textTheme.headlineSmall,
+                  ),
+                ),
+                FutureBuilder<List<Attraction>>(
+                  future: _getRandomAttractions(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 24.0),
+                        child: Center(child: CircularProgressIndicator()),
+                      );
+                    }
+                    final attractions = snapshot.data!;
+                    return ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: attractions.length,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      itemBuilder: (context, index) {
+                        final a = attractions[index];
+                        return Card(
+                          margin: const EdgeInsets.only(bottom: 14),
+                          elevation: 2,
+                          child: ListTile(
+                            leading: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                a.image,
+                                width: 54,
+                                height: 54,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            title: Text(
+                              a.name,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            subtitle: Text(
+                              "${a.city ?? ''}${a.city != null && a.country != null ? ', ' : ''}${a.country ?? ''}",
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                            trailing:
+                                a.rating != null
+                                    ? Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Icon(
+                                          Icons.star,
+                                          color: Colors.amber,
+                                          size: 18,
+                                        ),
+                                        const SizedBox(width: 3),
+                                        Text(
+                                          a.rating!.toStringAsFixed(1),
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                    : const Text(
+                                      "-",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                '/attractionDetail',
+                                arguments: a,
+                              );
+                            },
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+                const SizedBox(height: 20),
               ],
             ),
           );

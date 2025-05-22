@@ -14,13 +14,18 @@ dependencies:
   flutter_bloc: ^8.1.3
   shared_preferences: ^2.2.2
   google_fonts: ^6.2.1
-  # Add more if you want (e.g., url_launcher for "View on Map" button)
   url_launcher: ^6.2.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
 
 flutter:
   uses-material-design: true
@@ -49,7 +54,9 @@ flutter:
     - assets/images/colosseum.jpg
     - assets/images/rome.jpg
     - assets/images/italy.jpg
+    - assets/images/nishtha-photo.jpg
     - assets/images/castle_hill.jpg
+    - assets/images/splash.png
     - assets/images/promenade.jpeg
     - assets/images/nice.jpg
     - assets/images/louvre.jpg

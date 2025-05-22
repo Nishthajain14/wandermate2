@@ -94,6 +94,26 @@ class CustomDrawer extends StatelessWidget {
             title: Text("About", style: GoogleFonts.montserrat(fontSize: 18)),
             onTap: () => Navigator.pushReplacementNamed(context, '/about'),
           ),
+          const Spacer(),
+          // Logout option
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: Text(
+              "Logout",
+              style: GoogleFonts.montserrat(
+                fontSize: 18,
+                color: Colors.red,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            onTap: () {
+              // Remove all previous routes and go to login
+              Navigator.of(
+                context,
+              ).pushNamedAndRemoveUntil('/login', (route) => false);
+            },
+          ),
+          const SizedBox(height: 18),
         ],
       ),
     );

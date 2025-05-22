@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel/screens/splash_screen.dart';
 import 'package:travel/screens/home_screen.dart';
 import 'package:travel/screens/login_screen.dart';
 import 'package:travel/screens/settings_screen.dart';
@@ -8,9 +9,9 @@ import 'package:travel/screens/cities_screen.dart';
 import 'package:travel/screens/search_screen.dart';
 import 'package:travel/screens/attractions_screen.dart';
 import 'package:travel/screens/attraction_detail_screen.dart';
-import 'package:travel/screens/favourites_screen.dart'; // <-- NEW: Import the Favourites screen
+import 'package:travel/screens/favourites_screen.dart';
 import 'blocs/theme_bloc.dart';
-import 'blocs/favourites_bloc.dart'; // <-- NEW: Import the Favourites bloc
+import 'blocs/favourites_bloc.dart';
 import 'theme/app_theme.dart';
 
 void main() async {
@@ -21,10 +22,7 @@ void main() async {
         BlocProvider<ThemeBloc>(
           create: (_) => ThemeBloc()..add(LoadThemeEvent()),
         ),
-        BlocProvider<FavouritesBloc>(
-          // <-- NEW: Provide the FavouritesBloc globally
-          create: (_) => FavouritesBloc(),
-        ),
+        BlocProvider<FavouritesBloc>(create: (_) => FavouritesBloc()),
       ],
       child: const TravelApp(),
     ),
@@ -44,8 +42,9 @@ class TravelApp extends StatelessWidget {
           theme: lightTealTheme,
           darkTheme: darkTealTheme,
           themeMode: state.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-          initialRoute: '/login',
+          initialRoute: '/splash',
           routes: {
+            '/splash': (context) => const SplashScreen(),
             '/login': (context) => const LoginScreen(),
             '/home': (context) => const HomeScreen(),
             '/settings': (context) => const SettingsScreen(),
@@ -54,11 +53,8 @@ class TravelApp extends StatelessWidget {
             '/search': (context) => const SearchScreen(),
             '/attractions': (context) => const AttractionsScreen(),
             '/attractionDetail': (context) => const AttractionDetailScreen(),
-            '/favourites':
-                (context) =>
-                    const FavouritesScreen(), // <-- NEW: Favourites screen route
+            '/favourites': (context) => const FavouritesScreen(),
             '/logout': (context) => const LoginScreen(),
-            // Add any additional routes/screens here as needed
           },
         );
       },

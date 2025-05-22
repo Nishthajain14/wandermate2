@@ -6,6 +6,9 @@ class Attraction {
   final double price;
   final double? lat;
   final double? lng;
+  final String? city; // nullable for backward compatibility
+  final String? country; // nullable for backward compatibility
+  final double? rating; // for future use if needed
 
   Attraction({
     required this.name,
@@ -15,9 +18,16 @@ class Attraction {
     required this.price,
     this.lat,
     this.lng,
+    this.city,
+    this.country,
+    this.rating,
   });
 
-  factory Attraction.fromJson(Map<String, dynamic> json) {
+  factory Attraction.fromJson(
+    Map<String, dynamic> json, {
+    String? city,
+    String? country,
+  }) {
     return Attraction(
       name: json['name'],
       image: json['image'],
@@ -26,6 +36,10 @@ class Attraction {
       price: (json['price'] as num).toDouble(),
       lat: json['lat'] != null ? (json['lat'] as num).toDouble() : null,
       lng: json['lng'] != null ? (json['lng'] as num).toDouble() : null,
+      city: city, // pass down from parent if available
+      country: country, // pass down from parent if available
+      rating:
+          json['rating'] != null ? (json['rating'] as num).toDouble() : null,
     );
   }
 }

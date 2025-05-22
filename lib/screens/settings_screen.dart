@@ -34,6 +34,17 @@ class SettingsScreen extends StatelessWidget {
                   },
                 ),
           ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: const Text('Logout', style: TextStyle(color: Colors.red)),
+            onTap: () {
+              // Remove all previous routes and go to login
+              Navigator.of(
+                context,
+              ).pushNamedAndRemoveUntil('/login', (route) => false);
+            },
+          ),
         ],
       ),
     );

@@ -62,6 +62,25 @@ class AttractionTile extends StatelessWidget {
                               style: Theme.of(context).textTheme.titleSmall
                                   ?.copyWith(color: Colors.teal),
                             ),
+                            const SizedBox(height: 6),
+                            // Ratings Row
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                  size: 18,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  (attraction.rating != null)
+                                      ? attraction.rating!.toStringAsFixed(1)
+                                      : "-",
+                                  style: Theme.of(context).textTheme.titleSmall
+                                      ?.copyWith(fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ),

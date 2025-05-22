@@ -75,6 +75,30 @@ class AttractionsScreen extends StatelessWidget {
                                         .titleMedium
                                         ?.copyWith(color: Colors.teal),
                                   ),
+                                  const SizedBox(height: 8),
+                                  // Rating Row (NEW)
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                        size: 20,
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        (attraction.rating != null)
+                                            ? attraction.rating!
+                                                .toStringAsFixed(1)
+                                            : "-",
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.titleMedium?.copyWith(
+                                          color: Colors.black87,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),

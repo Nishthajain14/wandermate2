@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/cities_screen.dart';
@@ -8,7 +9,7 @@ import 'screens/attraction_detail_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/about_screen.dart';
 import 'screens/search_screen.dart';
-import 'screens/favourites_screen.dart'; // <-- Add this import
+import 'screens/favourites_screen.dart';
 import 'blocs/theme_bloc.dart';
 
 class TravelApp extends StatelessWidget {
@@ -22,8 +23,9 @@ class TravelApp extends StatelessWidget {
           title: 'WanderMate',
           debugShowCheckedModeBanner: false,
           theme: state.themeData,
-          initialRoute: '/login',
+          initialRoute: '/splash',
           routes: {
+            '/splash': (_) => const SplashScreen(),
             '/login': (_) => const LoginScreen(),
             '/home': (_) => const HomeScreen(),
             '/cities': (_) => const CitiesScreen(),
@@ -32,8 +34,7 @@ class TravelApp extends StatelessWidget {
             '/settings': (_) => const SettingsScreen(),
             '/about': (_) => const AboutScreen(),
             '/search': (_) => const SearchScreen(),
-            '/favourites':
-                (_) => const FavouritesScreen(), // <-- Add this route
+            '/favourites': (_) => const FavouritesScreen(),
           },
         );
       },
