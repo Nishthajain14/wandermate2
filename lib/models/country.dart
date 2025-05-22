@@ -3,13 +3,13 @@ import 'city.dart';
 class Country {
   final String name;
   final String image;
-  final String? description; // <-- Added
+  final String? description;
   final List<City> cities;
 
   Country({
     required this.name,
     required this.image,
-    this.description, // <-- Added
+    this.description,
     required this.cities,
   });
 
@@ -19,7 +19,7 @@ class Country {
     return Country(
       name: json['name'],
       image: json['image'],
-      description: json['description'], // <-- Added
+      description: json['description'],
       cities: citiesList,
     );
   }

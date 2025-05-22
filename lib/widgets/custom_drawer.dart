@@ -1,38 +1,98 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+  const CustomDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final primary = Theme.of(context).colorScheme.primary;
+
     return Drawer(
-      child: ListView(
+      child: Column(
         children: [
-          const DrawerHeader(child: Text('Menu')),
+          // Drawer header with logo and app name
+          DrawerHeader(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  primary.withOpacity(0.93),
+                  Colors.tealAccent.withOpacity(0.75),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            margin: EdgeInsets.zero,
+            padding: EdgeInsets.zero,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // App logo (make sure this asset exists)
+                  SizedBox(
+                    height: 70,
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "WanderMate",
+                    style: GoogleFonts.pacifico(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          // Menu title with stylish font
+          Padding(
+            padding: const EdgeInsets.only(left: 24.0, top: 6, bottom: 18),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Menu",
+                style: GoogleFonts.montserrat(
+                  fontSize: 23,
+                  fontWeight: FontWeight.w400,
+                  color: primary,
+                  letterSpacing: 1,
+                ),
+              ),
+            ),
+          ),
+          // Navigation options
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text('Home'),
-            onTap:
-                () => Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/home',
-                  (route) => false,
-                ),
+            title: Text("Home", style: GoogleFonts.montserrat(fontSize: 18)),
+            onTap: () => Navigator.pushReplacementNamed(context, '/home'),
+          ),
+          ListTile(
+            leading: const Icon(Icons.favorite),
+            title: Text(
+              "Favourites",
+              style: GoogleFonts.montserrat(fontSize: 18),
+            ),
+            onTap: () => Navigator.pushReplacementNamed(context, '/favourites'),
           ),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
-            onTap: () => Navigator.pushNamed(context, '/settings'),
+            title: Text(
+              "Settings",
+              style: GoogleFonts.montserrat(fontSize: 18),
+            ),
+            onTap: () => Navigator.pushReplacementNamed(context, '/settings'),
           ),
           ListTile(
             leading: const Icon(Icons.info),
-            title: const Text('About'),
-            onTap: () => Navigator.pushNamed(context, '/about'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('Logout'),
-            onTap: () => Navigator.pushReplacementNamed(context, '/login'),
+            title: Text("About", style: GoogleFonts.montserrat(fontSize: 18)),
+            onTap: () => Navigator.pushReplacementNamed(context, '/about'),
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../theme/app_theme.dart'; // <-- Add this import
 
 abstract class ThemeEvent {}
 
@@ -17,13 +18,13 @@ class ThemeState {
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc()
-    : super(ThemeState(themeData: ThemeData.light(), isDarkMode: false)) {
+    : super(ThemeState(themeData: lightTealTheme, isDarkMode: false)) {
     on<LoadThemeEvent>((event, emit) async {
       final prefs = await SharedPreferences.getInstance();
       final isDark = prefs.getBool('isDarkMode') ?? false;
       emit(
         ThemeState(
-          themeData: isDark ? ThemeData.dark() : ThemeData.light(),
+          themeData: isDark ? darkTealTheme : lightTealTheme,
           isDarkMode: isDark,
         ),
       );
@@ -35,7 +36,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
       await prefs.setBool('isDarkMode', isDark);
       emit(
         ThemeState(
-          themeData: isDark ? ThemeData.dark() : ThemeData.light(),
+          themeData: isDark ? darkTealTheme : lightTealTheme,
           isDarkMode: isDark,
         ),
       );

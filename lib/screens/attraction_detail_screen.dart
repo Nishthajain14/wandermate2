@@ -1,32 +1,119 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/attraction.dart';
+import '../blocs/favourites_bloc.dart';
 
 class AttractionDetailScreen extends StatelessWidget {
   const AttractionDetailScreen({Key? key}) : super(key: key);
+
+  Future<void> _openMap(BuildContext context, Attraction attraction) async {
+    String url;
+    if (attraction.lat != null && attraction.lng != null) {
+      url =
+          'https://www.google.com/maps/search/?api=1&query=${attraction.lat},${attraction.lng}';
+    } else {
+      final encodedName = Uri.encodeComponent(attraction.name);
+      url = 'https://www.google.com/maps/search/?api=1&query=$encodedName';
+    }
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Could not open map.")));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final Attraction attraction =
         ModalRoute.of(context)!.settings.arguments as Attraction;
     return Scaffold(
-      appBar: AppBar(title: Text(attraction.name)),
+      appBar: AppBar(
+        title: Text(attraction.name),
+        actions: [
+          BlocBuilder<FavouritesBloc, FavouritesState>(
+            builder: (context, favState) {
+              final isFavourited = favState.attractions.any(
+                (a) => a.name == attraction.name,
+              );
+              return IconButton(
+                icon: Icon(
+                  isFavourited ? Icons.favorite : Icons.favorite_border,
+                  color: isFavourited ? Colors.red : Colors.white,
+                ),
+                tooltip:
+                    isFavourited
+                        ? "Remove from Favourites"
+                        : "Add to Favourites",
+                onPressed: () {
+                  context.read<FavouritesBloc>().add(
+                    ToggleAttractionFavourite(attraction),
+                  );
+                },
+              );
+            },
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Hero(
-              tag: attraction.image,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(24),
-                  bottomRight: Radius.circular(24),
+            Stack(
+              children: [
+                Hero(
+                  tag: attraction.image,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(24),
+                      bottomRight: Radius.circular(24),
+                    ),
+                    child: Image.asset(
+                      attraction.image,
+                      height: 220,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-                child: Image.asset(
-                  attraction.image,
-                  height: 220,
-                  fit: BoxFit.cover,
+                Positioned(
+                  top: 20,
+                  right: 24,
+                  child: BlocBuilder<FavouritesBloc, FavouritesState>(
+                    builder: (context, favState) {
+                      final isFavourited = favState.attractions.any(
+                        (a) => a.name == attraction.name,
+                      );
+                      return Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          customBorder: const CircleBorder(),
+                          onTap: () {
+                            context.read<FavouritesBloc>().add(
+                              ToggleAttractionFavourite(attraction),
+                            );
+                          },
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white.withOpacity(0.80),
+                            radius: 22,
+                            child: Icon(
+                              isFavourited
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color:
+                                  isFavourited ? Colors.red : Colors.grey[600],
+                              size: 26,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
@@ -85,9 +172,7 @@ class AttractionDetailScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onPressed: () {
-                          // TODO: Add View on Map functionality (e.g. url_launcher)
-                        },
+                        onPressed: () => _openMap(context, attraction),
                         icon: const Icon(Icons.map),
                         label: const Text('View on Map'),
                       ),

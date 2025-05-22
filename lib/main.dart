@@ -8,14 +8,24 @@ import 'package:travel/screens/cities_screen.dart';
 import 'package:travel/screens/search_screen.dart';
 import 'package:travel/screens/attractions_screen.dart';
 import 'package:travel/screens/attraction_detail_screen.dart';
+import 'package:travel/screens/favourites_screen.dart'; // <-- NEW: Import the Favourites screen
 import 'blocs/theme_bloc.dart';
+import 'blocs/favourites_bloc.dart'; // <-- NEW: Import the Favourites bloc
 import 'theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    BlocProvider<ThemeBloc>(
-      create: (_) => ThemeBloc()..add(LoadThemeEvent()),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>(
+          create: (_) => ThemeBloc()..add(LoadThemeEvent()),
+        ),
+        BlocProvider<FavouritesBloc>(
+          // <-- NEW: Provide the FavouritesBloc globally
+          create: (_) => FavouritesBloc(),
+        ),
+      ],
       child: const TravelApp(),
     ),
   );
@@ -31,8 +41,8 @@ class TravelApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'WanderMate',
-          theme: lightPurpleTheme,
-          darkTheme: darkPurpleTheme,
+          theme: lightTealTheme,
+          darkTheme: darkTealTheme,
           themeMode: state.isDarkMode ? ThemeMode.dark : ThemeMode.light,
           initialRoute: '/login',
           routes: {
@@ -44,6 +54,9 @@ class TravelApp extends StatelessWidget {
             '/search': (context) => const SearchScreen(),
             '/attractions': (context) => const AttractionsScreen(),
             '/attractionDetail': (context) => const AttractionDetailScreen(),
+            '/favourites':
+                (context) =>
+                    const FavouritesScreen(), // <-- NEW: Favourites screen route
             '/logout': (context) => const LoginScreen(),
             // Add any additional routes/screens here as needed
           },

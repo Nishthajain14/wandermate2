@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -15,12 +16,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final teal = theme.colorScheme.primary;
+
     return Scaffold(
-      // Beautiful purple gradient background
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFa18cd1), Color(0xFF6d5bba)],
+            colors: [theme.scaffoldBackgroundColor, teal.withOpacity(0.12)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -33,10 +36,10 @@ class _LoginScreenState extends State<LoginScreen> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24),
               ),
-              color: Colors.white.withOpacity(0.95),
+              color: theme.cardColor.withOpacity(0.97),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  vertical: 32,
+                  vertical: 36,
                   horizontal: 24,
                 ),
                 child: Form(
@@ -44,25 +47,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // App Logo
-                      Image.asset(
-                        'assets/images/logo.png',
-                        height: 80,
-                        width: 80,
+                      // Welcome Text
+                      Text(
+                        'Welcome to',
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          color: teal,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1.1,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'WanderMate',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.pacifico(
+                          fontSize: 38,
+                          color: teal,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.2,
+                        ),
                       ),
                       const SizedBox(height: 24),
-                      Text(
-                        'Welcome to WanderMate',
-                        style: Theme.of(context).textTheme.headlineLarge
-                            ?.copyWith(color: const Color(0xFF6d5bba)),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 16),
                       TextFormField(
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'Email',
-                          prefixIcon: Icon(Icons.email),
-                          border: OutlineInputBorder(
+                          prefixIcon: Icon(Icons.email, color: teal),
+                          border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(16)),
                           ),
                         ),
@@ -74,12 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                     : 'Enter a valid email',
                         onSaved: (value) => _email = value ?? '',
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: 18),
                       TextFormField(
                         obscureText: _obscure,
                         decoration: InputDecoration(
                           labelText: 'Password',
-                          prefixIcon: const Icon(Icons.lock),
+                          prefixIcon: Icon(Icons.lock, color: teal),
                           border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(16)),
                           ),
@@ -88,6 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               _obscure
                                   ? Icons.visibility
                                   : Icons.visibility_off,
+                              color: teal,
                             ),
                             onPressed:
                                 () => setState(() => _obscure = !_obscure),
@@ -100,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     : 'Minimum 6 characters',
                         onSaved: (value) => _password = value ?? '',
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 26),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
@@ -109,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
-                            backgroundColor: const Color(0xFFa18cd1),
+                            backgroundColor: teal,
                             foregroundColor: Colors.white,
                             elevation: 4,
                           ),
@@ -124,16 +135,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
+                              letterSpacing: 1.0,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 14),
                       TextButton(
                         onPressed: () {
                           // TODO: Implement forgot password logic
                         },
-                        child: const Text("Forgot Password?"),
+                        style: TextButton.styleFrom(foregroundColor: teal),
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ],
                   ),

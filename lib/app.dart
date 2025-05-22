@@ -7,7 +7,8 @@ import 'screens/attractions_screen.dart';
 import 'screens/attraction_detail_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/about_screen.dart';
-import 'screens/search_screen.dart'; // <-- Add this import
+import 'screens/search_screen.dart';
+import 'screens/favourites_screen.dart'; // <-- Add this import
 import 'blocs/theme_bloc.dart';
 
 class TravelApp extends StatelessWidget {
@@ -30,7 +31,9 @@ class TravelApp extends StatelessWidget {
             '/attractionDetail': (_) => const AttractionDetailScreen(),
             '/settings': (_) => const SettingsScreen(),
             '/about': (_) => const AboutScreen(),
-            '/search': (_) => const SearchScreen(), // <-- Add this route
+            '/search': (_) => const SearchScreen(),
+            '/favourites':
+                (_) => const FavouritesScreen(), // <-- Add this route
           },
         );
       },

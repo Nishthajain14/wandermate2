@@ -3,13 +3,13 @@ import 'attraction.dart';
 class City {
   final String name;
   final String image;
-  final String? description; // <-- Added
+  final String? description;
   final List<Attraction> attractions;
 
   City({
     required this.name,
     required this.image,
-    this.description, // <-- Added
+    this.description,
     required this.attractions,
   });
 
@@ -21,7 +21,7 @@ class City {
     return City(
       name: json['name'],
       image: json['image'],
-      description: json['description'], // <-- Added
+      description: json['description'],
       attractions: attractionsList,
     );
   }
