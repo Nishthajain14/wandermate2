@@ -333,5 +333,834 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Germany",
+    "image": "assets/images/germany.jpg",
+    "description": "Germany is celebrated for its fairy-tale castles, efficient cities, beer culture, and beautiful countryside.",
+    "cities": [
+      {
+        "name": "Berlin",
+        "image": "assets/images/berlin.jpg",
+        "description": "A creative capital with a rich history, vibrant nightlife, and cultural diversity.",
+        "attractions": [
+          {
+            "name": "Brandenburg Gate",
+            "image": "assets/images/brandenburg.jpg",
+            "description": "Historic neoclassical monument.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 52.5163,
+            "lng": 13.3777
+          },
+          {
+            "name": "Berlin Wall Memorial",
+            "image": "assets/images/berlin_wall.jpg",
+            "description": "Remnants and memorial of Berlin Wall.",
+            "opening_hours": "8 AM - 10 PM",
+            "price": 0.0,
+            "lat": 52.5351,
+            "lng": 13.3904
+          }
+        ]
+      },
+      {
+        "name": "Munich",
+        "image": "assets/images/munich.jpg",
+        "description": "Known for Oktoberfest, beer gardens, and grand architecture.",
+        "attractions": [
+          {
+            "name": "Marienplatz",
+            "image": "assets/images/marienplatz.jpg",
+            "description": "Central square with historic buildings.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 48.1371,
+            "lng": 11.5754
+          },
+          {
+            "name": "English Garden",
+            "image": "assets/images/english_garden.jpg",
+            "description": "One of the largest urban parks in the world.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 48.1590,
+            "lng": 11.6036
+          }
+        ]
+      },
+      {
+        "name": "Hamburg",
+        "image": "assets/images/hamburg.jpg",
+        "description": "A lively port city with canals, maritime heritage, and rich culture.",
+        "attractions": [
+          {
+            "name": "Miniatur Wunderland",
+            "image": "assets/images/miniatur.jpg",
+            "description": "World’s largest model railway museum.",
+            "opening_hours": "9 AM - 6 PM",
+            "price": 20.0,
+            "lat": 53.5436,
+            "lng": 9.9882
+          },
+          {
+            "name": "Elbphilharmonie",
+            "image": "assets/images/elbphilharmonie.jpg",
+            "description": "Modern concert hall and architectural icon.",
+            "opening_hours": "10 AM - 8 PM",
+            "price": 15.0,
+            "lat": 53.5413,
+            "lng": 9.9841
+          }
+        ]
+      },
+      {
+        "name": "Cologne",
+        "image": "assets/images/cologne.jpeg",
+        "description": "Historic city on the Rhine, famed for its impressive Gothic cathedral.",
+        "attractions": [
+          {
+            "name": "Cologne Cathedral",
+            "image": "assets/images/cologne_cathedral.jpg",
+            "description": "Gothic cathedral and UNESCO site.",
+            "opening_hours": "6 AM - 8 PM",
+            "price": 0.0,
+            "lat": 50.9413,
+            "lng": 6.9583
+          },
+          {
+            "name": "Rhine River Cruise",
+            "image": "assets/images/rhine_cruise.jpg",
+            "description": "Scenic cruise on the Rhine River.",
+            "opening_hours": "10 AM - 6 PM",
+            "price": 25.0,
+            "lat": 50.9696,
+            "lng": 7.0036
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Singapore",
+    "image": "assets/images/singapore.jpg",
+    "description": "Singapore is a global city-state known for its cleanliness, gardens, futuristic skyline, and multicultural harmony.",
+    "cities": [
+      {
+        "name": "Singapore City",
+        "image": "assets/images/singapore_city.jpg",
+        "description": "A modern metropolis blending skyscrapers, history, and world-class attractions.",
+        "attractions": [
+          {
+            "name": "Marina Bay Sands",
+            "image": "assets/images/marina_bay.jpg",
+            "description": "Iconic hotel and skypark.",
+            "opening_hours": "24 Hours",
+            "price": 23.0,
+            "lat": 1.2834,
+            "lng": 103.8607
+          },
+          {
+            "name": "Gardens by the Bay",
+            "image": "assets/images/gardens_bay.jpg",
+            "description": "Futuristic nature park.",
+            "opening_hours": "5 AM - 2 AM",
+            "price": 28.0,
+            "lat": 1.2816,
+            "lng": 103.8636
+          },
+          {
+            "name": "Sentosa Island",
+            "image": "assets/images/sentosa.jpg",
+            "description": "Leisure destination with beaches and resorts.",
+            "opening_hours": "9 AM - 10 PM",
+            "price": 0.0,
+            "lat": 1.2494,
+            "lng": 103.8303
+          }
+        ]
+      },
+      {
+        "name": "Jurong",
+        "image": "assets/images/jurong.jpg",
+        "description": "A residential and industrial area with parks, gardens, and family attractions.",
+        "attractions": [
+          {
+            "name": "Jurong Bird Park",
+            "image": "assets/images/bird_park.png",
+            "description": "Asia’s largest bird paradise.",
+            "opening_hours": "8:30 AM - 6 PM",
+            "price": 25.0,
+            "lat": 1.3184,
+            "lng": 103.7065
+          },
+          {
+            "name": "Chinese Garden",
+            "image": "assets/images/chinese_garden.png",
+            "description": "Serene garden with Chinese-style landscaping.",
+            "opening_hours": "6 AM - 11 PM",
+            "price": 0.0,
+            "lat": 1.3416,
+            "lng": 103.7322
+          },
+          {
+            "name": "Science Centre",
+            "image": "assets/images/science_centre.jpeg",
+            "description": "Interactive science museum.",
+            "opening_hours": "10 AM - 6 PM",
+            "price": 12.0,
+            "lat": 1.3339,
+            "lng": 103.7359
+          }
+        ]
+      },
+      {
+        "name": "Bukit Timah",
+        "image": "assets/images/bukit_timah.jpg",
+        "description": "A lush district known for natural reserves, hiking, and biodiversity.",
+        "attractions": [
+          {
+            "name": "Bukit Timah Nature Reserve",
+            "image": "assets/images/bukit_timah_nature.jpeg",
+            "description": "Rainforest reserve with hiking trails.",
+            "opening_hours": "7 AM - 7 PM",
+            "price": 0.0,
+            "lat": 1.3483,
+            "lng": 103.7798
+          },
+          {
+            "name": "Hindhede Quarry",
+            "image": "assets/images/hindhede.jpg",
+            "description": "Scenic quarry with walking trails.",
+            "opening_hours": "7 AM - 7 PM",
+            "price": 0.0,
+            "lat": 1.3481,
+            "lng": 103.7757
+          },
+          {
+            "name": "The Rail Corridor",
+            "image": "assets/images/rail_corridor.jpg",
+            "description": "Green corridor for cycling and walking.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 1.3153,
+            "lng": 103.8198
+          }
+        ]
+      },
+      {
+        "name": "Tampines",
+        "image": "assets/images/tampines.jpeg",
+        "description": "A lively town with parks, recreation, and a strong community feel.",
+        "attractions": [
+          {
+            "name": "Tampines Eco Green",
+            "image": "assets/images/eco_green.jpg",
+            "description": "Eco-friendly park and nature reserve.",
+            "opening_hours": "7 AM - 7 PM",
+            "price": 0.0,
+            "lat": 1.3569,
+            "lng": 103.9372
+          },
+          {
+            "name": "Our Tampines Hub",
+            "image": "assets/images/tampines_hub.jpeg",
+            "description": "Integrated lifestyle and sports hub.",
+            "opening_hours": "8 AM - 10 PM",
+            "price": 0.0,
+            "lat": 1.3539,
+            "lng": 103.9408
+          },
+          {
+            "name": "Bedok Reservoir Park",
+            "image": "assets/images/bedok_reservoir.jpeg",
+            "description": "Waterfront park for jogging and kayaking.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 1.3406,
+            "lng": 103.9277
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spain",
+    "image": "assets/images/spain.png",
+    "description": "Spain enchants with its passionate culture, historic cities, sunny beaches, and unique festivals.",
+    "cities": [
+      {
+        "name": "Barcelona",
+        "image": "assets/images/barcelona.jpg",
+        "description": "A cosmopolitan city known for Gaudi's architecture, lively streets, and Mediterranean beaches.",
+        "attractions": [
+          {
+            "name": "Sagrada Família",
+            "image": "assets/images/sagrada.jpg",
+            "description": "Iconic basilica designed by Gaudí.",
+            "opening_hours": "9 AM - 8 PM",
+            "price": 26.0,
+            "lat": 41.4036,
+            "lng": 2.1744
+          },
+          {
+            "name": "Park Güell",
+            "image": "assets/images/park_guell.jpg",
+            "description": "Colorful park with mosaic architecture.",
+            "opening_hours": "8:30 AM - 6:30 PM",
+            "price": 10.0,
+            "lat": 41.4145,
+            "lng": 2.1527
+          },
+          {
+            "name": "La Rambla",
+            "image": "assets/images/la_rambla.jpg",
+            "description": "Famous street with shops and performers.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 41.3809,
+            "lng": 2.1731
+          }
+        ]
+      },
+      {
+        "name": "Madrid",
+        "image": "assets/images/madrid.jpg",
+        "description": "Spain's lively capital, famed for art museums, elegant boulevards, and culinary delights.",
+        "attractions": [
+          {
+            "name": "Prado Museum",
+            "image": "assets/images/prado.jpg",
+            "description": "Renowned European art museum.",
+            "opening_hours": "10 AM - 8 PM",
+            "price": 15.0,
+            "lat": 40.4138,
+            "lng": -3.6921
+          },
+          {
+            "name": "Royal Palace",
+            "image": "assets/images/royal_palace.jpg",
+            "description": "Historic royal residence.",
+            "opening_hours": "10 AM - 6 PM",
+            "price": 12.0,
+            "lat": 40.4179,
+            "lng": -3.7143
+          },
+          {
+            "name": "Retiro Park",
+            "image": "assets/images/retiro.jpg",
+            "description": "Large city park with a lake and sculptures.",
+            "opening_hours": "6 AM - 10 PM",
+            "price": 0.0,
+            "lat": 40.4153,
+            "lng": -3.6844
+          }
+        ]
+      },
+      {
+        "name": "Seville",
+        "image": "assets/images/seville.jpg",
+        "description": "A city bursting with flamenco, Moorish palaces, and Gothic cathedrals.",
+        "attractions": [
+          {
+            "name": "Seville Cathedral",
+            "image": "assets/images/seville_cathedral.jpg",
+            "description": "Largest Gothic cathedral in the world.",
+            "opening_hours": "11 AM - 5 PM",
+            "price": 10.0,
+            "lat": 37.3861,
+            "lng": -5.9926
+          },
+          {
+            "name": "Plaza de España",
+            "image": "assets/images/plaza_espana.jpg",
+            "description": "Impressive plaza with canal and bridges.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 37.3772,
+            "lng": -5.9869
+          },
+          {
+            "name": "Alcázar of Seville",
+            "image": "assets/images/alcazar.jpg",
+            "description": "Royal palace with Moorish architecture.",
+            "opening_hours": "9:30 AM - 5 PM",
+            "price": 13.5,
+            "lat": 37.3831,
+            "lng": -5.9903
+          }
+        ]
+      },
+      {
+        "name": "Valencia",
+        "image": "assets/images/valencia.jpg",
+        "description": "A vibrant city on Spain’s east coast, famous for arts, science, and paella.",
+        "attractions": [
+          {
+            "name": "City of Arts and Sciences",
+            "image": "assets/images/arts_sciences.jpg",
+            "description": "Futuristic complex with museums and an aquarium.",
+            "opening_hours": "10 AM - 9 PM",
+            "price": 15.0,
+            "lat": 39.4542,
+            "lng": -0.3536
+          },
+          {
+            "name": "L'Oceanogràfic",
+            "image": "assets/images/oceanographic.jpeg",
+            "description": "Largest aquarium in Europe.",
+            "opening_hours": "10 AM - 6 PM",
+            "price": 31.0,
+            "lat": 39.4541,
+            "lng": -0.3474
+          },
+          {
+            "name": "Valencia Cathedral",
+            "image": "assets/images/valencia_cathedral.jpeg",
+            "description": "Historic church with Holy Grail legend.",
+            "opening_hours": "10 AM - 6:30 PM",
+            "price": 8.0,
+            "lat": 39.4752,
+            "lng": -0.3750
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Portugal",
+    "image": "assets/images/portugal.jpg",
+    "description": "Portugal charms with its stunning coastlines, historic cities, and delicious cuisine.",
+    "cities": [
+      {
+        "name": "Lisbon",
+        "image": "assets/images/lisbon.jpg",
+        "description": "The hilly, coastal capital known for pastel-colored buildings, Fado music, and historic trams.",
+        "attractions": [
+          {
+            "name": "Belém Tower",
+            "image": "assets/images/belem_tower.jpg",
+            "description": "Iconic 16th-century fortification.",
+            "opening_hours": "10 AM - 5:30 PM",
+            "price": 6.0,
+            "lat": 38.6916,
+            "lng": -9.2160
+          },
+          {
+            "name": "Jerónimos Monastery",
+            "image": "assets/images/jeronimos.jpg",
+            "description": "Gothic-style former monastery.",
+            "opening_hours": "10 AM - 5:30 PM",
+            "price": 10.0,
+            "lat": 38.6981,
+            "lng": -9.2066
+          },
+          {
+            "name": "Alfama District",
+            "image": "assets/images/alfama.jpg",
+            "description": "Oldest district with Fado music.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 38.7139,
+            "lng": -9.1266
+          }
+        ]
+      },
+      {
+        "name": "Porto",
+        "image": "assets/images/porto.jpg",
+        "description": "A historic city along the Douro River, renowned for port wine and colorful facades.",
+        "attractions": [
+          {
+            "name": "Dom Luís I Bridge",
+            "image": "assets/images/dom_luis.jpg",
+            "description": "Double-deck metal arch bridge.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 41.1401,
+            "lng": -8.6110
+          },
+          {
+            "name": "Livraria Lello",
+            "image": "assets/images/livaria_lello.jpg",
+            "description": "Famous historic bookstore.",
+            "opening_hours": "9:30 AM - 7 PM",
+            "price": 5.0,
+            "lat": 41.1466,
+            "lng": -8.6147
+          },
+          {
+            "name": "Clérigos Tower",
+            "image": "assets/images/clerigos.png",
+            "description": "Baroque bell tower with city views.",
+            "opening_hours": "9 AM - 7 PM",
+            "price": 6.0,
+            "lat": 41.1456,
+            "lng": -8.6148
+          }
+        ]
+      },
+      {
+        "name": "Funchal",
+        "image": "assets/images/funchal.jpeg",
+        "description": "Madeira’s capital, known for its gardens, hills, and coastal scenery.",
+        "attractions": [
+          {
+            "name": "Monte Palace Gardens",
+            "image": "assets/images/monte_palace.jpg",
+            "description": "Tropical gardens and museum.",
+            "opening_hours": "9:30 AM - 6 PM",
+            "price": 12.5,
+            "lat": 32.6687,
+            "lng": -16.9126
+          },
+          {
+            "name": "Funchal Cable Car",
+            "image": "assets/images/funchal_cable.jpg",
+            "description": "Scenic ride over Madeira.",
+            "opening_hours": "10 AM - 6 PM",
+            "price": 11.0,
+            "lat": 32.6486,
+            "lng": -16.9054
+          },
+          {
+            "name": "Funchal Cathedral",
+            "image": "assets/images/funchal_cathedral.jpg",
+            "description": "Gothic-style church in the city center.",
+            "opening_hours": "9 AM - 6 PM",
+            "price": 0.0,
+            "lat": 32.6487,
+            "lng": -16.9110
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "UAE",
+    "image": "assets/images/uae.jpg",
+    "description": "The United Arab Emirates is a federation of modern cities, luxury shopping, desert adventures, and futuristic skylines.",
+    "cities": [
+      {
+        "name": "Dubai",
+        "image": "assets/images/dubai.jpg",
+        "description": "A global city known for its skyscrapers, shopping malls, and vibrant nightlife.",
+        "attractions": [
+          {
+            "name": "Burj Khalifa",
+            "image": "assets/images/burj_khalifa.jpg",
+            "description": "World's tallest building.",
+            "opening_hours": "8:30 AM - 11 PM",
+            "price": 40.0,
+            "lat": 25.1972,
+            "lng": 55.2744
+          },
+          {
+            "name": "Dubai Mall",
+            "image": "assets/images/dubai_mall.jpg",
+            "description": "Luxury shopping and entertainment.",
+            "opening_hours": "10 AM - 12 AM",
+            "price": 0.0,
+            "lat": 25.1972,
+            "lng": 55.2797
+          },
+          {
+            "name": "Palm Jumeirah",
+            "image": "assets/images/palm.png",
+            "description": "Artificial island with resorts.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 25.1122,
+            "lng": 55.1389
+          }
+        ]
+      },
+      {
+        "name": "Abu Dhabi",
+        "image": "assets/images/abu_dhabi.png",
+        "description": "The capital of the UAE, known for its cultural landmarks and modern architecture.",
+        "attractions": [
+          {
+            "name": "Sheikh Zayed Grand Mosque",
+            "image": "assets/images/mosque.jpg",
+            "description": "One of the largest mosques in the world.",
+            "opening_hours": "9 AM - 10 PM",
+            "price": 0.0,
+            "lat": 24.4128,
+            "lng": 54.4749
+          },
+          {
+            "name": "Louvre Abu Dhabi",
+            "image": "assets/images/louvre_abu_dhabi.jpg",
+            "description": "Art museum in a unique dome.",
+            "opening_hours": "10 AM - 8 PM",
+            "price": 17.0,
+            "lat": 24.5322,
+            "lng": 54.3962
+          },
+          {
+            "name": "Ferrari World",
+            "image": "assets/images/ferrari_world.jpg",
+            "description": "Theme park with fastest rollercoaster.",
+            "opening_hours": "11 AM - 8 PM",
+            "price": 80.0,
+            "lat": 24.4804,
+            "lng": 54.6054
+          }
+        ]
+      },
+      {
+        "name": "Sharjah",
+        "image": "assets/images/sharjah.jpg",
+        "description": "A city rich in arts, culture, and Islamic heritage.",
+        "attractions": [
+          {
+            "name": "Sharjah Art Museum",
+            "image": "assets/images/art_museum.jpg",
+            "description": "Art gallery with Middle Eastern works.",
+            "opening_hours": "8 AM - 8 PM",
+            "price": 0.0,
+            "lat": 25.3631,
+            "lng": 55.3912
+          },
+          {
+            "name": "Al Noor Mosque",
+            "image": "assets/images/al_noor.jpg",
+            "description": "Beautiful mosque open to non-Muslims.",
+            "opening_hours": "9 AM - 1 PM",
+            "price": 0.0,
+            "lat": 25.3372,
+            "lng": 55.3854
+          },
+          {
+            "name": "Sharjah Aquarium",
+            "image": "assets/images/aquarium_sharjah.jpg",
+            "description": "Marine life center and exhibits.",
+            "opening_hours": "8 AM - 8 PM",
+            "price": 15.0,
+            "lat": 25.3097,
+            "lng": 55.3773
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Canada",
+    "image": "assets/images/canada.jpg",
+    "description": "Canada boasts stunning natural beauty, multicultural cities, and a reputation for friendliness.",
+    "cities": [
+      {
+        "name": "Toronto",
+        "image": "assets/images/toronto.jpg",
+        "description": "Canada’s largest city, famed for its skyline, diversity, and vibrant arts scene.",
+        "attractions": [
+          {
+            "name": "CN Tower",
+            "image": "assets/images/cn_tower.jpg",
+            "description": "Observation tower with glass floor.",
+            "opening_hours": "9 AM - 10 PM",
+            "price": 43.0,
+            "lat": 43.6426,
+            "lng": -79.3871
+          },
+          {
+            "name": "Ripley's Aquarium",
+            "image": "assets/images/ripleys.jpg",
+            "description": "Family-friendly aquatic attraction.",
+            "opening_hours": "10 AM - 8 PM",
+            "price": 35.0,
+            "lat": 43.6424,
+            "lng": -79.3859
+          },
+          {
+            "name": "Royal Ontario Museum",
+            "image": "assets/images/rom.jpg",
+            "description": "Museum of world culture and natural history.",
+            "opening_hours": "10 AM - 5:30 PM",
+            "price": 23.0,
+            "lat": 43.6677,
+            "lng": -79.3948
+          }
+        ]
+      },
+      {
+        "name": "Vancouver",
+        "image": "assets/images/vancouver.jpeg",
+        "description": "A scenic west coast city surrounded by mountains, ocean, and lush parks.",
+        "attractions": [
+          {
+            "name": "Stanley Park",
+            "image": "assets/images/stanley_park.jpeg",
+            "description": "Urban park with seawall trails.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 49.3043,
+            "lng": -123.1443
+          },
+          {
+            "name": "Capilano Suspension Bridge",
+            "image": "assets/images/capilano.jpg",
+            "description": "Famous swinging bridge in forest.",
+            "opening_hours": "9 AM - 5 PM",
+            "price": 59.0,
+            "lat": 49.3429,
+            "lng": -123.1149
+          },
+          {
+            "name": "Granville Island",
+            "image": "assets/images/granville.jpg",
+            "description": "Popular public market and arts hub.",
+            "opening_hours": "9 AM - 7 PM",
+            "price": 0.0,
+            "lat": 49.2706,
+            "lng": -123.1340
+          }
+        ]
+      },
+      {
+        "name": "Montreal",
+        "image": "assets/images/montreal.jpg",
+        "description": "A city blending French heritage, festivals, and a thriving culinary scene.",
+        "attractions": [
+          {
+            "name": "Mount Royal Park",
+            "image": "assets/images/mount_royal.jpg",
+            "description": "Scenic park with city views.",
+            "opening_hours": "6 AM - 12 AM",
+            "price": 0.0,
+            "lat": 45.5075,
+            "lng": -73.5872
+          },
+          {
+            "name": "Old Montreal",
+            "image": "assets/images/old_montreal.jpeg",
+            "description": "Historic district with cobbled streets.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 45.5074,
+            "lng": -73.5547
+          },
+          {
+            "name": "Notre-Dame Basilica",
+            "image": "assets/images/notre_dame_montreal.jpg",
+            "description": "Ornate church with vibrant interior.",
+            "opening_hours": "8 AM - 4:30 PM",
+            "price": 14.0,
+            "lat": 45.5043,
+            "lng": -73.5561
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Switzerland",
+    "image": "assets/images/switzerland.jpg",
+    "description": "Switzerland is known for its Alpine scenery, precision, outdoor sports, and chocolate.",
+    "cities": [
+      {
+        "name": "Zurich",
+        "image": "assets/images/zurich.jpg",
+        "description": "Switzerland’s largest city, offering lakeside beauty, shopping, and a vibrant old town.",
+        "attractions": [
+          {
+            "name": "Bahnhofstrasse",
+            "image": "assets/images/bahnhofstrasse.jpg",
+            "description": "World-famous shopping street.",
+            "opening_hours": "10 AM - 8 PM",
+            "price": 0.0,
+            "lat": 47.3723,
+            "lng": 8.5381
+          },
+          {
+            "name": "Lake Zurich",
+            "image": "assets/images/lake_zurich.jpg",
+            "description": "Relaxing lake with boat rides.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 47.3492,
+            "lng": 8.5498
+          },
+          {
+            "name": "Uetliberg Mountain",
+            "image": "assets/images/uetliberg.jpg",
+            "description": "Panoramic views of Zurich.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 47.3496,
+            "lng": 8.4910
+          }
+        ]
+      },
+      {
+        "name": "Geneva",
+        "image": "assets/images/geneva.jpg",
+        "description": "A cosmopolitan city on Lake Geneva, home to international organizations and luxury shopping.",
+        "attractions": [
+          {
+            "name": "Jet d'Eau",
+            "image": "assets/images/jet_deau.jpg",
+            "description": "Iconic water fountain in Lake Geneva.",
+            "opening_hours": "10 AM - 4 PM",
+            "price": 0.0,
+            "lat": 46.2074,
+            "lng": 6.1551
+          },
+          {
+            "name": "Palace of Nations",
+            "image": "assets/images/palace_nations.jpg",
+            "description": "UN headquarters in Europe.",
+            "opening_hours": "10 AM - 12 PM",
+            "price": 15.0,
+            "lat": 46.2266,
+            "lng": 6.1432
+          },
+          {
+            "name": "Old Town Geneva",
+            "image": "assets/images/old_geneva.jpg",
+            "description": "Historic area with cafes and landmarks.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 46.2000,
+            "lng": 6.1500
+          }
+        ]
+      },
+      {
+        "name": "Lucerne",
+        "image": "assets/images/lucerne.jpg",
+        "description": "A picturesque city by the lake, famous for its wooden bridge and mountain views.",
+        "attractions": [
+          {
+            "name": "Chapel Bridge",
+            "image": "assets/images/chapel_bridge.jpg",
+            "description": "Famous wooden bridge with paintings.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 47.0516,
+            "lng": 8.3066
+          },
+          {
+            "name": "Lake Lucerne",
+            "image": "assets/images/lake_lucerne.jpg",
+            "description": "Scenic lake surrounded by mountains.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 47.0000,
+            "lng": 8.4167
+          },
+          {
+            "name": "Lion Monument",
+            "image": "assets/images/lion_monument.jpg",
+            "description": "Sculpture commemorating Swiss Guards.",
+            "opening_hours": "Open 24 hours",
+            "price": 0.0,
+            "lat": 47.0583,
+            "lng": 8.3109
+          }
+        ]
+      }
+    ]
   }
 ]

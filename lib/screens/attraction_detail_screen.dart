@@ -1,3 +1,4 @@
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -8,17 +9,39 @@ class AttractionDetailScreen extends StatelessWidget {
   const AttractionDetailScreen({Key? key}) : super(key: key);
 
   Future<void> _openMap(BuildContext context, Attraction attraction) async {
-    String url;
+    String? url;
+
     if (attraction.lat != null && attraction.lng != null) {
-      url =
-          'https://www.google.com/maps/search/?api=1&query=${attraction.lat},${attraction.lng}';
+      final label = Uri.encodeComponent(attraction.name);
+      if (Platform.isAndroid || Platform.isIOS) {
+        // Try to open the native map app first
+        url =
+            'geo:${attraction.lat},${attraction.lng}?q=${attraction.lat},${attraction.lng}($label)';
+      } else {
+        url =
+            'https://www.google.com/maps/search/?api=1&query=${attraction.lat},${attraction.lng}';
+      }
     } else {
       final encodedName = Uri.encodeComponent(attraction.name);
       url = 'https://www.google.com/maps/search/?api=1&query=$encodedName';
     }
-    final uri = Uri.parse(url);
+
+    final uri = Uri.parse(url!);
+
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else if (attraction.lat != null && attraction.lng != null) {
+      // Fallback to Google Maps in browser if geo: fails
+      final fallbackUrl =
+          'https://www.google.com/maps/search/?api=1&query=${attraction.lat},${attraction.lng}';
+      final fallbackUri = Uri.parse(fallbackUrl);
+      if (await canLaunchUrl(fallbackUri)) {
+        await launchUrl(fallbackUri, mode: LaunchMode.externalApplication);
+      } else {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text("Could not open map.")));
+      }
     } else {
       ScaffoldMessenger.of(
         context,
