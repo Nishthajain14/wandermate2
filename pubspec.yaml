@@ -1,0 +1,172 @@
+name: travel
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.3
+  shared_preferences: ^2.2.2
+  # Add more if you want (e.g., url_launcher for "View on Map" button)
+  # url_launcher: ^6.2.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/hero_world.png
+    - assets/images/san_francisco.jpg
+    - assets/images/alcatraz.jpg
+    - assets/images/golden_gate.jpg
+    - assets/images/central_park.jpeg
+    - assets/images/statue_of_liberty.jpg
+    - assets/data/countries.json
+    - assets/images/new_york.jpg
+    - assets/images/usa.jpg
+    - assets/images/kinkakuji.jpg
+    - assets/images/fushimi_inari.jpg
+    - assets/images/kyoto.jpg
+    - assets/images/meiji_shrine.jpg
+    - assets/images/tokyo_tower.jpg
+    - assets/images/tokyo.jpg
+    - assets/images/japan.jpg
+    - assets/images/st_marks.jpeg
+    - assets/images/grand_canal.jpg
+    - assets/images/venice.jpg
+    - assets/images/trevi.jpg
+    - assets/images/colosseum.jpg
+    - assets/images/rome.jpg
+    - assets/images/italy.jpg
+    - assets/images/castle_hill.jpg
+    - assets/images/promenade.jpeg
+    - assets/images/nice.jpg
+    - assets/images/louvre.jpg
+    - assets/images/eiffel_tower.jpg
+    - assets/images/paris.jpg
+    - assets/images/france.jpg
+    - assets/images/logo.png
+    - assets/images/aquarium_sharjah.jpg
+    - assets/images/al_noor.jpg
+    - assets/images/art_museum.jpg
+    - assets/images/sharjah.jpg
+    - assets/images/ferrari_world.jpg
+    - assets/images/louvre_abu_dhabi.jpg
+    - assets/images/mosque.jpg
+    - assets/images/abu_dhabi.png
+    - assets/images/palm.png
+    - assets/images/dubai.jpg
+    - assets/images/burj_khalifa.jpg
+    - assets/images/uae.jpg
+    - assets/images/dubai_mall.jpg
+    - assets/images/lion_monument.jpg
+    - assets/images/lake_lucerne.jpg
+    - assets/images/chapel_bridge.jpg
+    - assets/images/lucerne.jpg
+    - assets/images/old_geneva.jpg
+    - assets/images/palace_nations.jpg
+    - assets/images/jet_deau.jpg
+    - assets/images/geneva.jpg
+    - assets/images/uetliberg.jpg
+    - assets/images/lake_zurich.jpg
+    - assets/images/bahnhofstrasse.jpg
+    - assets/images/zurich.jpg
+    - assets/images/switzerland.jpg
+    - assets/images/notre_dame_montreal.jpg
+    - assets/images/old_montreal.jpeg
+    - assets/images/mount_royal.jpg
+    - assets/images/montreal.jpg
+    - assets/images/granville.jpg
+    - assets/images/capilano.jpg
+    - assets/images/vancouver.jpeg
+    - assets/images/stanley_park.jpeg
+    - assets/images/rom.jpg
+    - assets/images/ripleys.jpg
+    - assets/images/cn_tower.jpg
+    - assets/images/toronto.jpg
+    - assets/images/canada.jpg
+    - assets/images/funchal_cathedral.jpg
+    - assets/images/funchal_cable.jpg
+    - assets/images/monte_palace.jpg
+    - assets/images/funchal.jpeg
+    - assets/images/clerigos.png
+    - assets/images/livaria_lello.jpg
+    - assets/images/dom_luis.jpg
+    - assets/images/porto.jpg
+    - assets/images/alfama.jpg
+    - assets/images/jeronimos.jpg
+    - assets/images/belem_tower.jpg
+    - assets/images/lisbon.jpg
+    - assets/images/portugal.jpg
+    - assets/images/valencia_cathedral.jpeg
+    - assets/images/oceanographic.jpeg
+    - assets/images/arts_sciences.jpg
+    - assets/images/valencia.jpg
+    - assets/images/alcazar.jpg
+    - assets/images/plaza_espana.jpg
+    - assets/images/seville_cathedral.jpg
+    - assets/images/seville.jpg
+    - assets/images/retiro.jpg
+    - assets/images/royal_palace.jpg
+    - assets/images/prado.jpg
+    - assets/images/madrid.jpg
+    - assets/images/la_rambla.jpg
+    - assets/images/park_guell.jpg
+    - assets/images/sagrada.jpg
+    - assets/images/barcelona.jpg
+    - assets/images/spain.png
+    - assets/images/bedok_reservoir.jpeg
+    - assets/images/tampines_hub.jpeg
+    - assets/images/eco_green.jpg
+    - assets/images/tampines.jpeg
+    - assets/images/rail_corridor.jpg
+    - assets/images/hindhede.jpg
+    - assets/images/bukit_timah_nature.jpeg
+    - assets/images/bukit_timah.jpg
+    - assets/images/jurong.jpg
+    - assets/images/science_centre.jpeg
+    - assets/images/chinese_garden.png
+    - assets/images/bird_park.png
+    - assets/images/sentosa.jpg
+    - assets/images/gardens_bay.jpg
+    - assets/images/marina_bay.jpg
+    - assets/images/singapore_city.jpg
+    - assets/images/singapore.jpg
+    - assets/images/rhine_cruise.jpg
+    - assets/images/cologne_cathedral.jpg
+    - assets/images/cologne.jpeg
+    - assets/images/elbphilharmonie.jpg
+    - assets/images/miniatur.jpg
+    - assets/images/hamburg.jpg
+    - assets/images/english_garden.jpg
+    - assets/images/marienplatz.jpg
+    - assets/images/munich.jpg
+    - assets/images/berlin_wall.jpg
+    - assets/images/brandenburg.jpg
+    - assets/images/berlin.jpg
+    - assets/images/germany.jpg
+    - assets/images/marine_drive.jpg
+    - assets/images/gateway_of_india.jpeg
+    - assets/images/mumbai.jpg
+    - assets/images/agra_fort.jpg
+    - assets/images/taj_mahal.jpg
+    - assets/images/agra.jpg
+    - assets/images/india_gate.jpg
+    - assets/images/red_fort.jpeg
+    - assets/images/delhi.jpg
+    - assets/images/bangalore_palace.jpg
+    - assets/images/lalbagh.jpeg
+    - assets/images/bangalore.jpg
+    - assets/images/india.jpg
+    
+    
