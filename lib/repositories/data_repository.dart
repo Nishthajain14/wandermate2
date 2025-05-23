@@ -10,7 +10,6 @@ class DataRepository {
     return countriesJson.map((e) => Country.fromJson(e)).toList();
   }
 
-  /// Loads all attractions from countries.json and flattens to a single list.
   Future<List<Attraction>> loadAttractions() async {
     final data = await rootBundle.loadString('assets/data/countries.json');
     final List countriesJson = json.decode(data);
